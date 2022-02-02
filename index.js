@@ -68,8 +68,9 @@ client.connect(err => {
         const order = req.body;
         ordersCollection.insertOne(order)
         .then(result => {
-            console.log(result);
-            res.send(result.acknowledged);
+            // console.log(result);
+            // res.send(result.acknowledged);
+            res.send(result);
         })
     })
 });
