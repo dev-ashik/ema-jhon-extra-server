@@ -47,6 +47,13 @@ client.connect(err => {
         })
     })
 
+    app.get('/orders', (req, res) => {
+        ordersCollection.find({})
+        .toArray((err, documents) => {
+            res.send(documents);
+        })
+    })
+
     app.get('/product/:key', (req, res) => {
         productsCollection.find({key: req.params.key})
         .toArray((err, documents) => {
